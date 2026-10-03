@@ -1,3 +1,3 @@
 all:
 	-bibtex thesis.aux
-	runtex thesis.tex
+	./runtex thesis.tex

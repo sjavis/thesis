@@ -1,0 +1,31 @@
+#!/bin/bash
+ARGUMENT="$1"
+# Determine aux name by stripping .tex suffix and adding .aux
+AUXNAME="${ARGUMENT%.tex}.aux"
+# Prevent linebreaks in latex output
+export max_print_line=1000
+export error_line=254
+export half_error_line=238
+
+printf "Step 1/4 - pdflatex\n"
+pdflatex -interaction=batchmode "$ARGUMENT" > /dev/null 2>&1
+
+# Determine if there are any citations
+citations=$(grep '\citation' $AUXNAME | grep -vi 'revtex\|apsrev')
+bibdata=$(grep '\\bibdata' $AUXNAME)
+if [ -z "$citations" ]; then
+  printf "No citations.\n"
+elif [ -z "$bibdata" ]; then
+  printf "No bib file.\n"
+else
+  printf "Step 2/4 - bibtex\n"
+  bibtex -terse "$AUXNAME"
+
+  printf "Step 3/4 - pdflatex\n"
+  pdflatex -interaction=batchmode "$ARGUMENT" > /dev/null 2>&1
+fi
+
+printf "Step 4/4 - pdflatex\n"
+pdflatex -interaction=nonstopmode -file-line-error "$ARGUMENT" | \
+  grep -v "[0-9]*/[0-9]*/[0-9]*/[0-9]*:[0-9]*:[0-9]*" | \
+  grep ".*:[0-9]*:\|Warning\|Overfull" --color=always; [ $? == 1 ]
