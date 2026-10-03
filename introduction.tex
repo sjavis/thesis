@@ -1,0 +1,39 @@
+\chapter{Introduction}
+\label{ch:introduction}
+
+Energy landscapes have been widely utilised in physics and chemistry to understand the various stable configurations of molecular and particulate systems, and to identify the possible reconfiguration pathways between them.
+These concepts have been crucial for understanding topics such as the folding behaviour of proteins\cite{Bryngelson1995} and the effect of catalysis upon chemical reactions\cite{Kerns2015}, as well as characterising the statistical behaviours of systems such as glasses and amorphous solids\cite{Raza2015}.
+
+Meanwhile, a separate field of study is that of multistable elastic structures, which are systems that have multiple stable states that can be reconfigured using external stimuli, modifying their functionality or structural arrangement.
+There are a variety of structures such as mechanical metamaterials\cite{Bertoldi2017a}, which can exhibit unusual mechanical properties, origami\cite{Peraza-Hernandez2014}, which involves folding flat sheets along predefined creases to create complex 3D shapes, and buckled mesostructures\cite{Fu2018}, which are thin films that buckle into 3D geometries under compression.
+Such multistable structures have found increasing applications in fields like robotics\cite{Gorissen2020,Currier2020}, flexible electronics\cite{Fu2018,Hawkes2010}, and deployable structures\cite{Filipov2015,Zareei2020}.
+
+The purpose of this thesis is to combine these two fields and to apply energy landscape techniques to continuous, macroscopic applications in general.
+To achieve this aim, new methods and software are developed to address computational challenges posed by these applications and systems with very large numbers of degrees of freedom, which can often become infeasible using existing approaches.
+This thesis then explores the energy landscapes of some reconfigurable buckled mesostructures, in particular a table-like structure and a ribbon with origami-inspired creases.
+The effect of changes to their geometry, material properties, and external forces are studied, as well as how these alter the stability of states and their reconfigurable behaviour.
+Through this we hope to gain new insights into the fundamental principles of reconfigurable elastic structures and to develop new approaches to design structures with desired functionality.
+
+\section{Structure of this thesis}
+Firstly, in \cref{ch:energy_landscapes}, the fundamental concepts of energy landscapes will be introduced, as well as an overview of some of the diverse applications that they have been used to study.
+This is followed, in \cref{ch:elastic_structures}, by an introduction to several different types of reconfigurable elastic structures, as well as some of the recent and ongoing research into these topics.
+After this, there is a summary of some of the existing studies that have applied various energy landscape techniques to investigate elastic structures.
+\Cref{ch:methods} will then explore a variety of computational methods used to investigate energy landscapes and their particular advantages and disadvantages will be discussed.
+
+The main original contributions of this thesis are then divided into four chapters. The first, \cref{ch:bitss}, introduces a new method for finding transition states, the binary image transition state search (BITSS).
+This method is evaluated by performing comparisons with other methods for locating transition states, and some of its unique and attractive features are demonstrated, such as the ability to find transition states even in discontinuous landscapes.
+
+Next, \cref{ch:software} outlines the implementation of a software library, `ELLib', that incorporates a variety of energy landscape methods.
+The primary goal of this is to create a cohesive and adaptable framework that can be applied to a range of complex applications.
+The library has also been designed from the ground up with parallel computing in mind in order to study large-scale systems.
+To demonstrate this, an example is presented that involves optimising the geometric parameters of an elastic structure in order to enhance the stability of its two distinct states.
+
+In \cref{ch:mesostructures}, these ideas are used in the analysis of 3D buckled mesostructures, leading to the creation of stability phase diagrams that are dependent upon the structural parameters.
+In addition to these, the chapter provides detailed information about the various reconfiguration pathways that are accessible to the structures.
+The results gained from this may be used to assist in the design of structures with desired behaviour and to inform the remote manipulation between states.
+
+Building upon this, \cref{ch:origami_ribbon} explores the energy landscapes of origami-inspired structures, focusing on the simple arrangement of a single ribbon with multiple creases, which can be used as building block for more complex structures.
+The chapter examines the impact of compressive strain and the number of creases on the different stable states that are accessible.
+The findings provide valuable insight into how creases can introduce further multistability to buckled mesostructures.
+
+Finally, \cref{ch:conclusion} brings together the work in this thesis to provide some overarching conclusions, and outlines some possible avenues for future work related to the energy landscapes of elastic structures.

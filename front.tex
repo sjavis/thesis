@@ -1,0 +1,63 @@
+% \hfill
+\begin{center}
+  \textbf{\Large \thesisTitle}\\
+  \textbf{\large Samuel Joseph Avis}\\
+  % \textbf{\large Abstract}\\
+\end{center}
+% \vspace{-1cm}
+% \chapter*{Abstract}
+% \vspace{-1.7cm}
+Energy landscapes analysis is a versatile approach to study multistable systems by identifying the network of stable states and reconfiguration pathways.
+% Thus far, it has primarily been used in microscale particulate systems, such as studying chemical reaction rates and multistep reactions, and to characterise the behaviour of systems such as how protein fold and the formation of crystals and amorphous solids.
+Thus far, it has primarily been used in microscale systems, such as studying chemical reaction rates and to characterise the behaviour of how protein fold.
+Here, however, we aim to utilise energy landscape techniques to study multistable elastic structures, in particular, complex 3D structures that have been buckled from 2D patterns, which are of interest for applications such as flexible electronics and microelectromechanical systems.
+
+To this end we have developed new energy landscape methods and software that are well suited to continuous, macroscale systems with many degrees of freedom.
+The first is the binary image transition state search method (BITSS), which offers greater efficiency for large scale systems compared to traditional transition state search methods, and it is well suited to complex, non-linear pathways.
+Next, a new software library is introduced that contains a variety of energy landscape methods and potentials which are parallelised to study large-scale continuous systems.
+This library can be flexibly used for any chosen application, and has been designed to be easily extensible for new methods and potentials.
+
+Furthermore, we exploit energy landscape analysis to tailor the stable states and reconfiguration paths of various reconfigurable buckled mesostructures.
+We establish stability phase diagrams and identify the corresponding available reconfiguration pathways by varying essential structural parameters.
+Furthermore, we identify how the introduction of creases affects the multistability of the structures, finding that a small number can increase the number of distinct states, but more creases can lead to a loss of multistability.
+Taken together, these results and methodology can be used to influence the design of new structures for a variety of different applications.
+
+
+\chapter*{Statement of Authorship}
+\noindent The work presented in this thesis has been developed under the supervision of Prof. Halim Kusumaatmaja of the Department of Physics at Durham University. All text and figures are the work of the author, unless otherwise stated. No part of this thesis has been presented for any other degree or qualification.
+
+%The specific contributions of other researchers to the work presented is detailed in the next section.
+
+
+% {\let\clearpage\relax \chapter*{Statement of Copyright}}
+{\let\cleardoublepage\relax\let\clearpage\relax \chapter*{Statement of Copyright}}
+\noindent The copyright of this thesis rests with the author. No quotation from it should be published without the author's prior written consent and information derived from it should be acknowledged.
+
+
+\chapter*{Publications}
+\newcommand{\theoldfootnote}{\thefootnote}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+The following published works form the majority of \cref{ch:bitss,ch:mesostructures,ch:origami_ribbon}:
+\begin{itemize}
+  \item S. J. Avis, J. R. Panter, and H. Kusumaatmaja, ``A robust and memory-efficient transition state search method for complex energy landscapes'', \emph{J. Chem. Phys.}, 157, 124107 (2022).
+  \item Y. Li\footnotemark[1], S. J. Avis\footnotemark[1], J. Chen, G. Wu, T. Zhang, H. Kusumaatmaja, and X.~Wang, ``Reconfiguration of multistable 3D ferromagnetic mesostructures guided by energy landscape surveys'', \emph{Extreme Mech. Lett.}, 48, 101428 (2021).
+  \item Y. Li\footnotemark[1], S. J. Avis\footnotemark[1], T. Zhang, H. Kusumaatmaja, and X. Wang, ``Tailoring the multistability of origami-inspired, buckled magnetic structures via compression and creasing'', \emph{Mater. Horiz.}, 8, 3324 (2021).
+\end{itemize}
+In the latter two, the experimental work was carried out by Y. Li, while the simulations and energy landscape analysis are my own work.
+\footnotetext[1]{These authors contributed equally to this work.}
+\renewcommand{\thefootnote}{\theoldfootnote}
+
+
+\chapter*{Acknowledgements}
+First and foremost, I would like to thank my supervisor, Prof. Halim Kusumaatmaja, for his unwavering support and guidance over the last several years which has made this work possible.
+I am also deeply grateful to Dr. Jack Panter for his help in getting me started with energy landscapes and providing a basis for my research.
+I would also like to thank Prof. Teng Zhang, Junbo Chen, and Guangchao Wan for their insightful discussions and introducing me to methods for studying elastic materials,
+and also Prof. Xueju Wang, Yi Li, and Zizheng Wang, whose expertise and collaboration in experimental work helped advance my research.
+And lastly, thank you to my parents and my partner, Alison, for their constant support and encouragement, without which I wouldn't have made it this far.
+
+
+\hypertarget{toc}{}
+\begingroup
+\singlespacing
+\tableofcontents
+\endgroup

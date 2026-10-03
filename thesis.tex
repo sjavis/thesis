@@ -1,0 +1,149 @@
+% Sam Avis, Durham University Physics department.
+% sam.avis@durham.ac.uk or avissam96@gmail.com
+% Thesis template
+
+
+\documentclass[11pt, twoside, openright, a4paper]{report}
+% Packages
+\usepackage[section]{placeins}
+\usepackage[square, numbers, comma, sort&compress]{natbib}
+\setcitestyle{numbers,super}
+\usepackage{caption}
+\captionsetup{font={small}}
+\setlength{\parskip}{1em}
+
+%\makeatletter
+
+\newcommand\frontmatter{%
+  %\cleardoublepage
+  %\@mainmatterfalse
+  \pagenumbering{roman}}
+
+\newcommand\mainmatter{%
+  \cleardoublepage
+%   %\@mainmattertrue
+  \pagenumbering{arabic}}
+
+\newcommand\backmatter{%
+  \if@openright
+  \cleardoublepage
+  \else
+  \clearpage
+  \fi
+  % \@mainmatterfalse
+}
+
+% \makeatother
+
+% Geometry
+\usepackage[a4paper,width=141mm,top=35mm,bottom=35mm,bindingoffset=8mm]{geometry}
+% \linespread{1.5}
+
+% Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf[lh,rh,ch]{}
+\fancyhf[leh]{\leftmark}
+\fancyhf[roh]{\rightmark}
+\setlength{\headheight}{13.6pt}
+
+% Table of contents
+\setcounter{tocdepth}{2}
+
+% Text
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[doublespacing]{setspace}
+\usepackage{siunitx}
+\usepackage{xcolor}
+% Ticks and crosses
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+% Lists
+\usepackage{enumitem}
+\setlist{nosep, before={\parskip=0pt}, after=\vspace{0pt}}%-\docparskip}}
+
+% Maths
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\grad}{\bm{\nabla}}
+\newcommand{\deriv}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\upDelta}{\mathop{}\!\Delta}
+
+% Code
+\newcommand{\code}[1]{\texttt{#1}}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+% Figures
+\usepackage{graphicx}
+\usepackage{floatrow}
+\graphicspath{{fig/}}
+
+% Referencing
+\usepackage{xr-hyper}
+% \usepackage{nohyperref}
+% \usepackage{url}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\crefname{figure}{fig.}{figs.}
+\newcounter{video}
+\renewcommand{\thevideo}{Video~\thechapter.\arabic{video}}
+\DeclareCaptionType{video}
+\crefname{video}{video}{videos}
+\crefformat{video}{video~#2#1#3}
+\crefrangeformat{video}{videos~#3#1#4 to~#5#2#6}
+
+% Table
+\usepackage{tabularx}
+\renewcommand\tabularxcolumn[1]{m{#1}} % For vertically centering
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\usepackage{booktabs}
+\usepackage{multirow}
+\newcommand{\tworow}[1]{\multirow{2}{*}[-0.5\dimexpr \aboverulesep + \belowrulesep + \cmidrulewidth]{#1}}
+
+
+\newcommand{\thesisTitle}{Surveying the Energy Landscapes of Multistable Elastic Structures}
+
+
+\begin{document}
+
+  \frontmatter
+  \input{titlepage}
+
+  {\let\cleardoublepage\clearpage
+  \input{front}
+  }
+
+  \mainmatter
+  \include{introduction}
+  \include{energy_landscapes/chapter}
+  \include{elastic_structures/chapter}
+  \include{methods/chapter}
+  \include{bitss/chapter}
+  \include{software/chapter}
+  \include{mesostructures/chapter}
+  \include{origami_ribbon/chapter}
+  \include{conclusion/chapter}
+
+  \appendix
+  \let\cleardoublepage\clearpage
+  \include{appendix}
+
+  \bibliographystyle{unsrt}
+  \addcontentsline{toc}{chapter}{Bibliography}
+  \singlespacing
+  \bibliography{library.bib}
+
+\end{document}

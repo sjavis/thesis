@@ -1,0 +1,26 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.bbl
+*.blg
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Python
+__pycache__/
+
+# Backup files
+*.bak
+
+# Compiled output
+thesis.pdf
+conclusion.pdf
+
+# Archive duplicates of tracked directories
+SI/ellib.zip
+SI/structure_optimisation.zip
